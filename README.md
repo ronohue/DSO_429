@@ -6,8 +6,9 @@ one file per round in [`answers/`](answers/).
 
 ## How it works
 
-A GitHub Actions workflow (`.github/workflows/answer-quiz.yml`) runs every
-five minutes:
+A GitHub Actions workflow (`.github/workflows/answer-quiz.yml`) ran every
+five minutes while the quiz was live. The homework is finished, so the workflow
+has been removed; it is still in the git history if it's ever needed again.
 
 1. `quiz/run.py` downloads `questions.csv` and groups it by round.
 2. Each question is matched against deterministic solvers in
@@ -19,8 +20,8 @@ five minutes:
    if an `ANTHROPIC_API_KEY` repository secret is set.
 4. New or changed answer files are committed and pushed to `main`.
 
-Rounds younger than three hours are re-solved on each run (corrections still
-count then); older rounds that already have a file are never touched.
+Rounds younger than three hours were re-solved on each run (corrections still
+count then); older rounds that already had a file were never touched.
 
 ## Checking accuracy
 
